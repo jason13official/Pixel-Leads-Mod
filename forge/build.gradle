@@ -1,0 +1,66 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev.legacyforge'
+}
+
+dependencies {
+  compileOnly project(":common")
+  annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
+  compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.4"))
+  jarJar(implementation("io.github.llamalad7:mixinextras-forge:0.5.4")) {
+    version {
+      // The version range your mod is actually compatible with.
+      // Note that you may receive a *lower* version than your preferred if another
+      // Mod is only compatible up to 1.7.24, for example, your mod might get 1.7.24 at runtime.
+      strictly '[0.5.4,)'
+      prefer '0.5.4' // The version actually used in your dev workspace
+    }
+  }
+}
+
+mixin {
+    add(sourceSets.main, "${mod_id}.refmap.json")
+
+    config("${mod_id}.mixins.json")
+    config("${mod_id}.forge.mixins.json")
+}
+
+legacyForge {
+    version = "${minecraft_version}-${forge_version}"
+
+    validateAccessTransformers = true
+
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers = ["src/main/resources/META-INF/accesstransformer.cfg"]
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        client {
+            client()
+        }
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+        server {
+            server()
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+sourceSets.main.resources.srcDir 'src/generated/resources'
+
+jar {
+    finalizedBy('reobfJar')
+    manifest.attributes(["MixinConfigs": "${mod_id}.mixins.json,${mod_id}.forge.mixins.json"])
+}
