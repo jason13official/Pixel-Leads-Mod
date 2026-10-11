@@ -16,7 +16,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "io.github.jason13official.pixel_fishing_lines.PixelFishingLinesFabric"
+      "io.github.jason13official.pixel_leads.PixelLeadsFabric"
     ]
   },
   "mixins": [

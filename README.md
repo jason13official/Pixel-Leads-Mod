@@ -1,1 +1,1 @@
-## Pixel Fishing Lines (Fabric/NeoForge 1.21.1)
+## Pixel Leads (Fabric/NeoForge 1.21.1)

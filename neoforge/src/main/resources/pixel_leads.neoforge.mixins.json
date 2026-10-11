@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.github.jason13official.pixel_fishing_lines.mixin",
+  "package": "io.github.jason13official.pixel_leads.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [

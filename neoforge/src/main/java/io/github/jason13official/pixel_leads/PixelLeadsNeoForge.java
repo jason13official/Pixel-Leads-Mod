@@ -1,12 +1,12 @@
-package io.github.jason13official.pixel_fishing_lines;
+package io.github.jason13official.pixel_leads;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 
 @Mod(value = Constants.MOD_ID, dist = Dist.CLIENT)
-public class PixelFishingLinesNeoForge {
+public class PixelLeadsNeoForge {
 
-  public PixelFishingLinesNeoForge(final IEventBus modEventBus) {
+  public PixelLeadsNeoForge(final IEventBus modEventBus) {
   }
 }

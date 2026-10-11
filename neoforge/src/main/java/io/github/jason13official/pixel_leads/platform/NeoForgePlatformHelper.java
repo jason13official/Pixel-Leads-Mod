@@ -1,6 +1,6 @@
-package io.github.jason13official.pixel_fishing_lines.platform;
+package io.github.jason13official.pixel_leads.platform;
 
-import io.github.jason13official.pixel_fishing_lines.platform.services.IPlatformHelper;
+import io.github.jason13official.pixel_leads.platform.services.IPlatformHelper;
 import java.nio.file.Path;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
