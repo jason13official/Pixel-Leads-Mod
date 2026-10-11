@@ -1,4 +1,4 @@
-package io.github.jason13official.pixel_fishing_lines.platform.services;
+package io.github.jason13official.pixel_leads.platform.services;
 
 import java.nio.file.Path;
 

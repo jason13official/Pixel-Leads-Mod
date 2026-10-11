@@ -1,7 +1,7 @@
-package io.github.jason13official.pixel_fishing_lines.platform;
+package io.github.jason13official.pixel_leads.platform;
 
-import io.github.jason13official.pixel_fishing_lines.Constants;
-import io.github.jason13official.pixel_fishing_lines.platform.services.IPlatformHelper;
+import io.github.jason13official.pixel_leads.Constants;
+import io.github.jason13official.pixel_leads.platform.services.IPlatformHelper;
 import java.util.ServiceConfigurationError;
 import java.util.ServiceLoader;
 

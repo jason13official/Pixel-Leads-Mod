@@ -1,8 +1,8 @@
-package io.github.jason13official.pixel_fishing_lines;
+package io.github.jason13official.pixel_leads;
 
 import net.minecraft.resources.ResourceLocation;
 
-public class PixelFishingLines {
+public class PixelLeads {
 
   public static void init() {
   }
